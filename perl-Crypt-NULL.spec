@@ -1,15 +1,13 @@
 %define upstream_name    Crypt-NULL
-%define upstream_version 1.02
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	6
+Version:	1.02
+Release:	7
 
 Summary:	Crypt-NULL module for perl 
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/dist/Crypt-NULL
-Source0:	https://cpan.metacpan.org/authors/id/A/AM/AMS/Crypt-NULL-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/A/AM/AMS/Crypt-NULL-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -22,7 +20,7 @@ This module implements NULL encryption. It supports the Crypt::CBC
 interface, with several functions.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -45,9 +43,7 @@ make test
 
 * Wed Jul 29 2009 Jérôme Quelin <jquelin@mandriva.org> 1.20.0-1mdv2011.0
 + Revision: 403032
-- rebuild using %%perl_convert_version
-
-* Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.02-3mdv2009.0
+- rebuild using %1.02 Wed Jul 30 2008 Thierry Vignaud <tv@mandriva.org> 1.02-3mdv2009.0
 + Revision: 256269
 - rebuild
 
